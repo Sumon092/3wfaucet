@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 height: 80px;
+background-color: #FFFFFF;
 `
 const Wrapper = styled.div`
 padding: 0px 30px;
@@ -11,6 +12,7 @@ height: 100%;
 display: flex;
 align-items:center;
 justify-content: space-between;
+
 `
 const Left = styled.div`
 flex:1;
