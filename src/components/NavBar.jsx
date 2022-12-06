@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-height:79px;
+padding:18px 0px;
 `
 const Wrapper = styled.div`
 padding: 0 30px;
@@ -23,14 +23,32 @@ align-items: center;
 const Logo = styled.h1`
 font-weight:600;
 font-size:25px;
-color:rgb(155,31,233);
+color:#9B1FF9;
 `
 const MenuItem = styled.div`
 cursor:pointer;
 margin-left: 10px;
 `
+const MenuButton = styled.button`
+   display :flex ;
+   justify-content:center;
+   align-items: center;
+   border: ${props => props.left ? '1px solid #ddd' : '2px solid #9B1FF9'};
+   color:${props => props.left ? '#6d7380' : '#9B1FF9'};
+   padding: ${props => props.left ? '10px 12px' : '9px 20px'};
+   background:transparent;
+   font-weight:${props => props.left ? '400' : '600'}; 
+   border-radius:3px;
+   cursor:pointer;
+`
+const ButtonText = styled.span`
+    font-size:14px;
+    margin-right: ${props => props.spacing === 'right' && '7px'};
+    margin-left: ${props => props.spacing === 'left' && '7px'};
+`
+
 const UserToggler = styled.div`
-    color:rgb(155,31,233);
+    color:#6d7380;
     background-color: #EEEEEE;
     font-size:25px;
     padding:5px;
@@ -48,12 +66,18 @@ const Navbar = () => {
                 <Left><Logo>Faucet</Logo></Left>
                 <Right>
                     <MenuItem>
-                        <span>Ethereum kovan</span>
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
+                        <MenuButton left>
+                            <ButtonText spacing='right'>Ethereum kovan</ButtonText>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
+                        </MenuButton>
+
                     </MenuItem>
                     <MenuItem>
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M95.5 104h320a87.73 87.73 0 0111.18.71 66 66 0 00-77.51-55.56L86 94.08h-.3a66 66 0 00-41.07 26.13A87.57 87.57 0 0195.5 104zm320 24h-320a64.07 64.07 0 00-64 64v192a64.07 64.07 0 0064 64h320a64.07 64.07 0 0064-64V192a64.07 64.07 0 00-64-64zM368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path><path d="M32 259.5V160c0-21.67 12-58 53.65-65.87C121 87.5 156 87.5 156 87.5s23 16 4 16-18.5 24.5 0 24.5 0 23.5 0 23.5L85.5 236z"></path></svg>
-                        <span>Connect Wallet</span>
+                        <MenuButton right>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M95.5 104h320a87.73 87.73 0 0111.18.71 66 66 0 00-77.51-55.56L86 94.08h-.3a66 66 0 00-41.07 26.13A87.57 87.57 0 0195.5 104zm320 24h-320a64.07 64.07 0 00-64 64v192a64.07 64.07 0 0064 64h320a64.07 64.07 0 0064-64V192a64.07 64.07 0 00-64-64zM368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path><path d="M32 259.5V160c0-21.67 12-58 53.65-65.87C121 87.5 156 87.5 156 87.5s23 16 4 16-18.5 24.5 0 24.5 0 23.5 0 23.5L85.5 236z"></path></svg>
+                            <ButtonText spacing='left'>Connect Wallet</ButtonText>
+                        </MenuButton>
+
                     </MenuItem>
 
                     <MenuItem>
