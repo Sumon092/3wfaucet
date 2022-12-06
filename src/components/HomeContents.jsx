@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Wallet from './Wallet';
 
 const Container = styled.div`
     padding: 0px 25px;
     background-color: #eef2fe;
-    height: 100vh;
+    height: 100%;
     margin: 0px;
 `
 const TextContainer = styled.div`
@@ -17,7 +18,9 @@ const Title = styled.h2`
     font-weight: 600;
 `
 const Text = styled.p`
-    
+    color:#6d7380;
+    font-size:16px;
+    line-height: 25px;
 `
 
 const HomeContents = () => {
@@ -29,6 +32,7 @@ const HomeContents = () => {
                     create and test your own oracle and Chainlinked smart contract
                 </Text>
             </TextContainer>
+            <Wallet />
         </Container>
     );
 };
