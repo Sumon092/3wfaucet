@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-padding:18px 0px;
+height: 80px;
 `
 const Wrapper = styled.div`
-padding: 0 30px;
+padding: 0px 30px;
+height: 100%;
 display: flex;
 align-items:center;
 justify-content: space-between;
@@ -63,7 +64,7 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <Left><Logo>Faucet</Logo></Left>
+                <Left><Logo>Faucets</Logo></Left>
                 <Right>
                     <MenuItem>
                         <MenuButton left>
