@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReCaptcha from './ReCaptcha';
 
 const Container = styled.div`
     height: 700px;
@@ -22,6 +23,49 @@ const Logo = styled.span`
     color: #9B1FF9;
     font-size:18px;
 `
+const InputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width:50%;
+    
+`
+const InputLabel = styled.label`
+    font-weight: 600;
+    color:#9B1FF9;
+    font-size:13px;
+`
+const InputBox = styled.div`
+    display: flex;
+    width:${props => props.bottom ? '50%' : ''} ;
+    background-color: ${props => props.bottom ? '#EFEFEF4D' : 'transparent'};
+    justify-content: space-between;
+    margin: 5px 0px 0px;
+    padding: 10px;
+    border:1px solid #eee;
+`
+const Input = styled.input`
+    outline: none;
+    width: 100%;
+    border:none;
+    background: transparent;
+`
+const RequestType = styled.div`
+    margin:10px 0px 0px;
+`
+const InputBottom = styled.div`
+    display: flex;
+`
+const Button = styled.button`
+    color:#FFFFFF;
+    font-size:13px;
+    padding: 10px 15px;
+    background-color: #9B1FE9;
+    border: none;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor:pointer;
+`
 
 const Wallet = () => {
     return (
@@ -34,7 +78,26 @@ const Wallet = () => {
                     Your wallet is connected to Ethereum Kovan, so you are requesting Ethereum Kovan Link/ETH.
                 </CautionText>
             </Caution>
-        </Container>
+            <InputContainer>
+                <InputLabel>Wallet Address</InputLabel>
+                <InputBox>
+                    <Input placeholder='Wallet Address...' />
+                </InputBox>
+                <RequestType>
+                    <InputLabel>Request Type</InputLabel>
+                    <InputBottom>
+                        <InputBox bottom style={{ marginRight: '15px' }}>
+                            <Input disabled value='20 Test Link' />
+                        </InputBox>
+                        <InputBox bottom>
+                            <Input disabled value='0.5 ETH' />
+                        </InputBox>
+                    </InputBottom>
+                </RequestType>
+            </InputContainer>
+            <ReCaptcha />
+            <Button>Send Request</Button>
+        </Container >
     );
 };
 
