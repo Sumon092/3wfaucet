@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -101,7 +102,7 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <Left><Logo>Faucets</Logo></Left>
+                <Link style={{ textDecoration: 'none' }} to="/"><Left><Logo>Faucets</Logo></Left></Link>
                 <Right>
                     <MenuItem>
                         <MenuButton left>
@@ -125,7 +126,8 @@ const Navbar = () => {
                     </MenuItem>
                     {active && <UserMenu>
                         <Ul>
-                            <Li>Login</Li>
+                            <Link style={{ textDecoration: 'none' }} to='login'><Li>Login</Li></Link>
+
                             <Li>Signup</Li>
                             <Li>FAQs</Li>
                         </Ul>
