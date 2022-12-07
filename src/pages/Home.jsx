@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import Footer from '../components/Footer';
 import HomeContents from '../components/HomeContents';
 import Navbar from '../components/NavBar';
 import Notice from '../components/Notice';
@@ -14,6 +15,7 @@ const Home = () => {
             <Navbar />
             <Notice />
             <HomeContents />
+            <Footer />
         </Container>
     );
 };

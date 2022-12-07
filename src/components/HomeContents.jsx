@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReqHistory from './ReqHistory';
 import Wallet from './Wallet';
 
 const Container = styled.div`
     padding: 0px 25px;
     background-color: #eef2fe;
-    height: 100%;
     margin: 0px;
 `
 const TextContainer = styled.div`

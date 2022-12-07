@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReCaptcha from './ReCaptcha';
+import ReqHistory from './ReqHistory';
 
 const Container = styled.div`
-    height: 700px;
     background-color: #ffffff;
     padding: 25px 20px;
 `
@@ -97,6 +97,7 @@ const Wallet = () => {
             </InputContainer>
             <ReCaptcha />
             <Button>Send Request</Button>
+            <ReqHistory />
         </Container >
     );
 };
