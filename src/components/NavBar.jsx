@@ -126,9 +126,9 @@ const Navbar = () => {
                     </MenuItem>
                     {active && <UserMenu>
                         <Ul>
-                            <Link style={{ textDecoration: 'none' }} to='login'><Li>Login</Li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/login' replace={true}><Li>Login</Li></Link>
 
-                            <Link style={{ textDecoration: 'none' }} to='signup'><Li>Signup</Li></Link>
+                            <Link replace={true} style={{ textDecoration: 'none' }} to='/signup'><Li>Signup</Li></Link>
                             <Li>FAQs</Li>
                         </Ul>
                     </UserMenu>}

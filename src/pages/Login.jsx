@@ -108,7 +108,7 @@ const Login = () => {
                         </InputWrapper>
                     </InputContainer>
                     <Button>Login</Button>
-                    <LoginText>Don't have an account? <Link to='signup' style={{ textDecoration: 'none', color: '##9b1fe9' }}>Signup</Link></LoginText>
+                    <LoginText>Don't have an account? <Link to='/signup' replace={true} style={{ textDecoration: 'none', color: '##9b1fe9' }}>Signup</Link></LoginText>
                     <LoginText or>Or</LoginText>
                     <SocialContainer>
                         <SocialText>
