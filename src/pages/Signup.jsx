@@ -94,7 +94,7 @@ const Login = () => {
             <Navbar />
             <LoginWrapper>
                 <LoginContainer>
-                    <Title>Login</Title>
+                    <Title>Signup</Title>
                     <InputContainer>
                         <InputLabel>Email</InputLabel>
                         <InputWrapper>
@@ -108,7 +108,7 @@ const Login = () => {
                         </InputWrapper>
                     </InputContainer>
                     <Button>Login</Button>
-                    <LoginText>Don't have an account? <Link to='signup' style={{ textDecoration: 'none', color: '##9b1fe9' }}>Signup</Link></LoginText>
+                    <LoginText>Already have an account? <Link to='login' style={{ textDecoration: 'none', color: '##9b1fe9' }}>Login</Link></LoginText>
                     <LoginText or>Or</LoginText>
                     <SocialContainer>
                         <SocialText>

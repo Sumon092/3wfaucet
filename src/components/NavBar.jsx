@@ -128,7 +128,7 @@ const Navbar = () => {
                         <Ul>
                             <Link style={{ textDecoration: 'none' }} to='login'><Li>Login</Li></Link>
 
-                            <Li>Signup</Li>
+                            <Link style={{ textDecoration: 'none' }} to='signup'><Li>Signup</Li></Link>
                             <Li>FAQs</Li>
                         </Ul>
                     </UserMenu>}
