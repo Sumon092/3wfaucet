@@ -23,17 +23,15 @@ const Button = styled.button`
    background:#f5f7fd;
    border-radius: 3px;
    cursor:pointer;
-   :active{
-    background-color:#0004dc;
-    color:#FFFFFF;
-   }
 `
 
 const ReqHistory = () => {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
+
     const handleClick = () => {
         setActive(!active);
     };
+
     return (
 
         <Container>
@@ -47,11 +45,18 @@ const ReqHistory = () => {
                         ETH Transaction History
                     </Button>
                 </NavLink>
-                <Button>TestLink Transaction History</Button>
+                <Button onClick={handleClick} style={{
+                    backgroundColor: !active ? "#0004dc" : "#f5f7fd",
+                    color: !active ? "#FFFFFF" : ""
+                }}>TestLink Transaction History</Button>
             </ButtonContainer>
             {
-                active ? <Table /> : <Table2 />
+                active && <Table />
             }
+            {
+                !active && <Table2 />
+            }
+
         </Container>
     );
 };
