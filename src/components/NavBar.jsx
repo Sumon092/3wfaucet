@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Ethereum from '../assets/etherieum.png'
+import BNB from '../assets/bnb.png'
 
 
 const Container = styled.div`
@@ -115,34 +116,42 @@ const NetworkList = styled.div`
     border-radius: 3px;
     box-shadow: 0 4px 9px -8px grey;
 `
+const Network = styled.div`
+    
+`
 const Navbar = () => {
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
     const handleClick = () => {
         setActive(!active);
     };
-    const [network, setNetwork] = useState(true);
+    const [network, setNetwork] = useState(false);
     const handleNetwork = () => {
         setNetwork(!network);
     };
+
+
 
     return (
         <Container>
             <Wrapper>
                 <Link style={{ textDecoration: 'none' }} to="/"><Left><Logo>Faucets</Logo></Left></Link>
                 <Right>
-                    <NetworkContainer >
-                        <MenuItem onClick={handleNetwork}>
+                    <NetworkContainer onClick={handleNetwork}>
+                        <MenuItem >
                             <MenuButton left>
-                                <Image src={Ethereum} />
-                                <ButtonText spacing='right'>Ethereum kovan</ButtonText>
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
+                                <Network>
+                                    <Image src={Ethereum} />
+                                    <ButtonText spacing='right'>Ethereum kovan</ButtonText>
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
+                                </Network>
+
                             </MenuButton>
                         </MenuItem>
                         {
                             network && <NetworkList >
                                 <Ul>
                                     <Li><Image src={Ethereum} />Arbitrum Rinkeby</Li>
-                                    <Li><Image src={Ethereum} />Avalanche Fuji</Li>
+                                    <Li><Image src={BNB} />Avalanche Fuji</Li>
                                     <Li><Image src={Ethereum} />BNB Chain Testnet</Li>
                                     <Li><Image src={Ethereum} />Ethereum Rinkeby</Li>
                                     <Li><Image src={Ethereum} />Fantom Testnet</Li>
