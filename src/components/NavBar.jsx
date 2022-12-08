@@ -91,7 +91,7 @@ const Li = styled.li`
     color:#6d7380;
     padding: 5px 10px;
     :hover{
-        background-color: #eee;
+        background-color: #f5f7fd;
         cursor:pointer;
     }
 `
@@ -100,24 +100,61 @@ const Image = styled.img`
     height: 15px;
     width: 15px;
 `
+const NetworkContainer = styled.div`
+    position: relative;
+`
+const NetworkList = styled.div`
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 225px;
+    height: auto;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 9px -8px grey;
+`
 const Navbar = () => {
     const [active, setActive] = useState(true);
     const handleClick = () => {
         setActive(!active);
     };
+    const [network, setNetwork] = useState(true);
+    const handleNetwork = () => {
+        setNetwork(!network);
+    };
+
     return (
         <Container>
             <Wrapper>
                 <Link style={{ textDecoration: 'none' }} to="/"><Left><Logo>Faucets</Logo></Left></Link>
                 <Right>
-                    <MenuItem>
-                        <MenuButton left>
-                            <Image src={Ethereum} />
-                            <ButtonText spacing='right'>Ethereum kovan</ButtonText>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
-                        </MenuButton>
+                    <NetworkContainer >
+                        <MenuItem onClick={handleNetwork}>
+                            <MenuButton left>
+                                <Image src={Ethereum} />
+                                <ButtonText spacing='right'>Ethereum kovan</ButtonText>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path></svg>
+                            </MenuButton>
+                        </MenuItem>
+                        {
+                            network && <NetworkList >
+                                <Ul>
+                                    <Li><Image src={Ethereum} />Arbitrum Rinkeby</Li>
+                                    <Li><Image src={Ethereum} />Avalanche Fuji</Li>
+                                    <Li><Image src={Ethereum} />BNB Chain Testnet</Li>
+                                    <Li><Image src={Ethereum} />Ethereum Rinkeby</Li>
+                                    <Li><Image src={Ethereum} />Fantom Testnet</Li>
+                                    <Li><Image src={Ethereum} />Harmony Testnet</Li>
+                                    <Li><Image src={Ethereum} />Poa network sokol</Li>
+                                    <Li><Image src={Ethereum} />Polygon Mumbai</Li>
+                                </Ul>
+                            </NetworkList>
+                        }
 
-                    </MenuItem>
+                    </NetworkContainer>
+
                     <MenuItem>
                         <MenuButton right>
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M95.5 104h320a87.73 87.73 0 0111.18.71 66 66 0 00-77.51-55.56L86 94.08h-.3a66 66 0 00-41.07 26.13A87.57 87.57 0 0195.5 104zm320 24h-320a64.07 64.07 0 00-64 64v192a64.07 64.07 0 0064 64h320a64.07 64.07 0 0064-64V192a64.07 64.07 0 00-64-64zM368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path><path d="M32 259.5V160c0-21.67 12-58 53.65-65.87C121 87.5 156 87.5 156 87.5s23 16 4 16-18.5 24.5 0 24.5 0 23.5 0 23.5L85.5 236z"></path></svg>
@@ -139,6 +176,7 @@ const Navbar = () => {
                             <Li>FAQs</Li>
                         </Ul>
                     </UserMenu>}
+
                 </Right>
             </Wrapper>
 
